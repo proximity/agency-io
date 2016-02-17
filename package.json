@@ -1,0 +1,71 @@
+{
+  "name": "agency-io",
+  "version": "0.0.1",
+  "description": "Agency IO",
+  "author": "Proximity Wellington",
+  "contributors": [
+    "Martin Hipp <martin.hipp@gmail.com>",
+    "Arthur Guigand <arthur@guigand.com>",
+    "Jeffry Ghazally <jghazally@screamingcodemonkey.com>"
+  ],
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proximity/agency-io.git"
+  },
+  "license": "ISC",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/proximity/agency-io/issues"
+  },
+  "homepage": "https://github.com/proximity/agency-io#readme",
+  "dependencies": {
+    "browserify": "^10.2.6",
+    "browserify-shim": "^3.8.9",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-size": "^1.2.3",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "lodash": "^3.10.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
+  },
+  "browser": {
+    "underscore": "./src/static/bower_components/underscore/underscore.js",
+    "backbone": "./src/static/bower_components/backbone/backbone.js",
+    "bootstrap": "./src/static/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js",
+    "hammer": "./src/static/bower_components/hammerjs/hammer.js",
+    "jquery-hammer": "./src/static/bower_components/jquery-hammerjs/jquery.hammer.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$",
+    "underscore": "_",
+    "backbone": {
+      "exports": "Backbone",
+      "depends": [
+        "underscore"
+      ]
+    },
+    "modernizr": "global:Modernizr",
+    "hammer": "Hammer",
+    "jquery-hammer": {
+      "exports": null,
+      "depends": [
+        "hammer"
+      ]
+    }
+  }
+}

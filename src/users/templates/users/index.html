@@ -1,0 +1,41 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Agency IO</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="{% static "css/master.css" %}">
+	<link rel="shortcut icon" href="{% static "favicon.ico" %}" />
+	<script src="{% static "bower_components/modernizr/modernizr.js" %}"></script>
+</head>
+<body>
+	<div id="page" class="container">
+		<div id="header">
+			<h1>Agency.io</h1>
+			<div id="name-input">
+				<input type="text" id="name" placeholder="Full name" class="form-control">
+				<a class="btn"><i class="glyphicon glyphicon-user"></i>+</a>
+			</div>
+		</div>
+		<ul id="filters"></ul>
+		<ul id="people"></ul>
+	</div>
+	<script id="person-template" type="text/template">
+		<div class="view">
+			<span class="name"><%- firstName %> <%- lastName %></span>
+			<% if (isGuest) { %><span class="guest">Guest</span><% } %>
+			<span class="status"><%- checkedIn ? 'In' : 'Out' %></span>
+		</div>
+	</script>
+	<script type="text/template" id="filters-template">
+		<li><a href="#toggle/" class="selected">All</a></li>
+		<% groups.each(function(group) { %>
+			<li><a href="#toggle/<%- group.get('id') %>"><%- group.get('name') %></a></li>
+		<% }) %>
+	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"><\/script>')</script>
+	<script src="{% static "js/bundle.js" %}"></script>
+</body>
+</html>

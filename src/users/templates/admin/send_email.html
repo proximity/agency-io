@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div class="alert alert-block alert-error">
+    <form action="" method="post">{% csrf_token %}
+
+        <p>The welcome email for the user <b>"{{ employee.first_name }} {{ employee.last_name }}"</b> will be send to <b>all</b> the active users of <b>all agencies</b>, are you sure?</p>
+
+        <button class="btn btn-danger" name="send_to" value="all" type="submit">Yes, I'm 100% sure!</button>
+        <button class="btn btn-info" name="send_to" value="me" type="submit">Send a test email to {{ current_user.email }}</button>
+    </form>
+</div>
+{% endblock %}

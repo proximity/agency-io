@@ -1,0 +1,27 @@
+{
+  "name": "agency-io",
+  "version": "0.0.1",
+  "homepage": "https://github.com/proximity/agency-io",
+  "authors": [
+    "Martin Hipp <martin.hipp@gmail.com>"
+  ],
+  "description": "Agency IO",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.1",
+    "underscore": "~1.8.3",
+    "modernizr": "~2.8.3",
+    "bootstrap-sass": "~3.3.5",
+    "jquery-hammerjs": "~2.0.0"
+  }
+}
