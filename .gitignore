@@ -2,7 +2,7 @@ node_modules
 bower_components
 .sass-cache
 *.pyc
-./static/
+/static/
 media
 src/db.agency-io
 .env
